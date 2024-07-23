@@ -7,6 +7,9 @@ dotenv.config();
 
 // Connect to MongoDB
 connectDB();
+app.get('/',(req,res)=>{
+    res.status(200).json({mes:"server on"})
+})
 
 const app = express();
 
