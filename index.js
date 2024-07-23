@@ -7,16 +7,16 @@ dotenv.config();
 
 // Connect to MongoDB
 connectDB();
-app.get('/',(req,res)=>{
-    res.status(200).json({mes:"server on"})
-})
+
 
 const app = express();
 
 // Middleware
 app.use(express.json({ extended: false }));
 app.use(cors())
-
+app.get('/',(req,res)=>{
+    res.status(200).json({mes:"server on"})
+})
 // Routes
 app.use('/api/users', require('./routes/auth'));
 app.use('/api/users', require('./routes/blog'));
