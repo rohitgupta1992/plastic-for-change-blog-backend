@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(express.json({ extended: false }));
-app.use(cors())
+app.use(cors({origin:"*"}))
 app.get('/',(req,res)=>{
     res.status(200).json({mes:"server on"})
 })
